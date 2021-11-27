@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="features">
+            <button id="grid_new">New</button>
+            <button id="grid_clear">Clear</button>
+        </div>
+        <div id="container"></div>
+        <script>
+            var grid_width = 16;
+            var grid_height = 16;
+            const container = document.getElementById('container');
+            
+            function grid_make(width, height) {
+                container.style.gridTemplateColumns = `repeat(${width}, 1fr)`
+                container.style.gridTemplateRows = `repeat(${height}, 1fr)`
+
+                for (var i = 0; i < grid_width * grid_height; i++) {
+                    container.appendChild(document.createElement('div'));
+                }
+            }
+            
+            // Make # of grid boxes given width & height
+            window.onload = () => {
+                grid_make(grid_width, grid_height);
+            }
+
+            function grid_clear() {
+                container.textContent = '';
+            }
+            // Clear grid
+            document.getElementById('grid_clear').onclick = grid_clear;
+
+            function grid_new() {
+                grid_width = window.prompt('Enter grid WIDTH', 16);
+                grid_height = window.prompt('Enter grid HEIGHT', 16);
+                grid_clear();
+                grid_make(grid_width, grid_height);
+            }
+            // New grid
+            document.getElementById('grid_new').onclick = grid_new;
+        </script>
+    </body>
+</html>

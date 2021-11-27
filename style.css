@@ -1,0 +1,44 @@
+*, *:after, *:before{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+}
+
+#features {
+    height: 50px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+    height: 100%;
+    width: 50%;
+}
+
+#container {
+    background-color: red;
+    margin: auto;
+    height: calc(100% - 50px);
+    width: auto;
+    display: grid;
+}
+#container div {
+    background-color:blue;
+}
+#container div:hover {
+    background-color: green;
+}
